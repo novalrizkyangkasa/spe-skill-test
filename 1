@@ -1,0 +1,30 @@
+<?php
+  function narcissistic($i)
+{
+  if($i==0)
+    return 0;
+    
+  return (1 + narcissistic($i/10));
+}
+
+  function check ($i)
+{
+  $x = narcissistic($i);
+  $y = $i;
+  $jumlah = 0;
+  
+    while ($y)
+    {
+      $jumlah += pow($y %10, $x);
+      $y = (int)$y / 10;
+    }
+    
+    return ($i == $jumlah);
+    }
+    
+$i = 153;
+if (check(!$i))
+  echo "true";
+else
+  echo "false";
+?>
